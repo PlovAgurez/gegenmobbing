@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b2c">
+  <title>Gemeinsam mutig — Eine Geschichte über Hilfe und Zusammenhalt</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Gemeinsam mutig – Startseite">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        <span>GEMEINSAM <b>MUTIG</b></span>
+      </a>
+      <div class="top-note"><span class="live-dot"></span> Eine Geschichte über Zusammenhalt</div>
+    </header>
+
+    <section class="game-shell" aria-label="Spiel Gemeinsam mutig">
+      <div class="game-heading">
+        <div>
+          <p class="eyebrow" id="chapter-label">DEINE GESCHICHTE</p>
+          <h1 id="scene-title">Ein schwieriger Tag bestimmt nicht, wer du bist.</h1>
+        </div>
+        <div class="chapter-count" id="chapter-count">BEREIT, WENN DU ES BIST</div>
+      </div>
+
+      <div class="stage-wrap">
+        <canvas id="game-canvas" width="960" height="440" aria-label="Gezeichnete Schulszene. Benutze die Steuerung, um deine Figur zu einer Vertrauensperson zu bringen."></canvas>
+        <div class="toast" id="game-toast" aria-live="polite"></div>
+        <div class="overlay" id="start-overlay">
+          <div class="overlay-card">
+            <span class="sun-icon" aria-hidden="true">✳</span>
+            <p class="eyebrow">EINE INTERAKTIVE GESCHICHTE</p>
+            <h2>Du musst da nicht allein durch.</h2>
+            <p>Viktor Sergej wird in der Schule gemobbt. Durchquere die Schulwege und achte auf Taschen, Bücher und Hütchen. Halte die Leertaste gedrückt, um Schlägen auszuweichen, und drücke W oder ↑ zum Springen. Am Ende jedes Weges wartet eine Lehrkraft. Wenn du getroffen wirst, kannst du den Abschnitt gefahrlos wiederholen.</p>
+            <button class="primary-button" id="start-button">Geschichte starten <span aria-hidden="true">→</span></button>
+            <p class="small-note">Du kannst jederzeit pausieren oder aufhören.</p>
+          </div>
+        </div>
+        <div class="overlay hidden" id="end-overlay">
+          <div class="overlay-card">
+            <span class="sun-icon" aria-hidden="true">✳</span>
+            <p class="eyebrow">DAS WAR MUTIG</p>
+            <h2>Du hast dir Hilfe geholt. Das ist wichtig.</h2>
+            <p id="ending-copy">Du hast es verdient, dich sicher zu fühlen. Um Unterstützung zu bitten, ist ein starker nächster Schritt.</p>
+            <div class="support-note"><b>Im echten Leben:</b> Erzähl einer erwachsenen Vertrauensperson, was passiert ist, wo und wann. Wenn du dich gerade unsicher fühlst, geh an einen betreuten Ort und bitte eine erwachsene Person um Hilfe.</div>
+            <button class="primary-button" id="restart-button">Nochmal spielen <span aria-hidden="true">↻</span></button>
+          </div>
+        </div>
+        <div class="overlay hidden" id="retry-overlay">
+          <div class="overlay-card">
+            <span class="sun-icon" aria-hidden="true">↻</span>
+            <p class="eyebrow">ATME EINMAL TIEF DURCH</p>
+            <h2>Du wurdest auf dem Weg getroffen.</h2>
+            <p>Im echten Leben bist du nicht verletzt. Versuche es noch einmal: Spring über Taschen, Bücher und Hütchen. Duck dich oder geh aus dem Weg, wenn du die Warnung vor einem Schlag siehst.</p>
+            <button class="primary-button" id="retry-button">Abschnitt wiederholen <span aria-hidden="true">↻</span></button>
+          </div>
+        </div>
+      </div>
+
+      <section class="info-row">
+        <div class="objective">
+          <span class="objective-icon" aria-hidden="true">◎</span>
+          <div>
+            <span class="label">DEIN NÄCHSTER SCHRITT</span>
+            <p id="objective-text">Atme einmal tief durch. Fang an, wenn du bereit bist.</p>
+          </div>
+        </div>
+        <div class="status-pill" id="status-pill"><span class="status-dot"></span><span id="status-text">Geschichte pausiert</span></div>
+      </section>
+
+      <footer class="controls">
+        <div class="keys" aria-label="Spielsteuerung">
+          <span class="label">STEUERUNG</span>
+          <span class="key-group"><kbd>A</kbd><kbd>D</kbd> <span>oder</span> <kbd>←</kbd><kbd>→</kbd> <span>laufen</span></span>
+          <span class="key-group"><kbd>LEERTASTE</kbd> <span>ducken</span></span>
+          <span class="key-group"><kbd>W</kbd><kbd>↑</kbd> <span>springen</span></span>
+          <span class="key-group"><kbd>E</kbd> <span>Lehrkraft ansprechen</span></span>
+        </div>
+        <div class="touch-controls" aria-label="Touch-Steuerung">
+          <button class="touch-button" data-key="left" aria-label="Nach links laufen">←</button>
+          <button class="touch-button" data-key="right" aria-label="Nach rechts laufen">→</button>
+          <button class="touch-button touch-action" data-key="duck">Ducken</button>
+          <button class="touch-button touch-action" data-key="jump">Springen</button>
+          <button class="touch-button touch-action" data-key="interact">Lehrkraft ansprechen</button>
+        </div>
+        <p class="chapter-progress" id="progress-label">Eine Geschichte in 4 Abschnitten</p>
+      </footer>
+    </section>
+    <p class="closing-note">Wenn dir so etwas passiert, hast du Hilfe von einer erwachsenen Vertrauensperson verdient. <span>Du bist nicht schuld.</span></p>
+  </main>
+</body>
+</html>
